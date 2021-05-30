@@ -21,13 +21,13 @@ const createAndSavePerson = (done) => {
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  Person.create(arrayOfPeople, function(err, data){
+  Person.create(arrayOfPeople, function (err, data) {
     done(null, data);
   });
 };
 
 const findPeopleByName = (personName, done) => {
-  Person.find(personName, function(err, data){
+  Person.find({ 'person.name': personName }, function (err, data) {
     done(null, data);
   })
 };
